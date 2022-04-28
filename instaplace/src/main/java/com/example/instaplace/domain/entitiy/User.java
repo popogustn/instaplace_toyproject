@@ -28,6 +28,6 @@ public class User {
 
     private LocalDate birth;
 
-    private LocalDateTime created_ts;
+    private LocalDateTime createdTs;
 
 }

@@ -12,18 +12,19 @@ import javax.persistence.*;
 @Setter
 public class FollowUser {
     @Id
-    @Column(name = "key")
+    @GeneratedValue
+    @Column(name = "KEY")
     private Long id;
 
     private String accept;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "USER_ID")
-    private User to_user;
+    private User toUser;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "USER_ID")
-    private User from_user;
+    private User fromUser;
 
 
 }
