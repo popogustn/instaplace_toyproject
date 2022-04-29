@@ -4,30 +4,22 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
-import java.time.LocalDateTime;
 
 @Entity
 @Getter @Setter
-public class Comment {
+public class TagRel {
     @Id
     @GeneratedValue
-    @Column(name = "COMMENT_ID")
+    @Column(name = "TAG_REL_ID")
     private Long id;
-
-    private LocalDateTime createdTs;
-
-    private LocalDateTime modifiedTs;
-
-    private String text;
-
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "USER_ID")
-    @Column(name = "WRITER")
-    private User writer;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "BOARD_ID")
     @Column(name = "BOARD")
     private Board board;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "TAG_ID")
+    @Column(name = "TAG")
+    private TagCode tagCode;
 }

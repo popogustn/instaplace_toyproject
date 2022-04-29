@@ -7,18 +7,17 @@ import javax.persistence.*;
 import java.time.LocalDateTime;
 
 @Entity
-@Getter @Setter
-public class Comment {
+@Getter
+@Setter
+public class BoardLike {
     @Id
     @GeneratedValue
-    @Column(name = "COMMENT_ID")
+    @Column(name = "LiKE_ID")
     private Long id;
 
     private LocalDateTime createdTs;
 
     private LocalDateTime modifiedTs;
-
-    private String text;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "USER_ID")
